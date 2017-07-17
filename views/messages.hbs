@@ -1,0 +1,29 @@
+{{#if all}}
+  <h1>All Messages</h1>
+{{else}}
+  <h1>Your conversation with {{contact}}</h1>
+{{/if}}
+<div class="all-messages">
+  {{#each messages}}
+    {{#if from}}
+    <div class="received">
+      <div class="received-message-container">
+          {{contact.name}} sent via {{channel}}: {{created}} <br> {{content}}
+      </div>
+    </div>
+
+    {{else}}
+    <div class="sent">
+      <div class="sent-message-container">
+          Sent to {{contact.name}} via {{channel}}: {{created}} <br> {{content}}
+      </div>
+    </div>
+
+    {{/if}}
+  {{/each}}
+  <div class="send">
+    <input type="text" name="content" placeholder="message"><span class="glyphicon glyphicon-upload"></span></input>
+  </div>
+</div>
+
+<a href="/contacts"><button type="button" class="btn btn-default">Back to Contacts</button></a>

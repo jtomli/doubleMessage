@@ -1,0 +1,17 @@
+<div class="container">
+  <form method="POST">
+    <div class="form-group">
+      <input type="text" name="name" class="form-control" value="{{contact.name}}" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <input type="text" name="phone" class="form-control" value="{{contact.phone}}" placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+      {{#if new}}
+        <button class="btn btn-success">Create Contact</button>
+      {{else}}
+        <button class="btn btn-success">Update Contact</button>
+      {{/if}}
+    </div>
+  </form>
+</div>

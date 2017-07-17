@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="options">
+    <a href="/signup">Sign Up</a>
+    <a href="/login">Login</a>
+  </div>
+  {{#if error}}
+    <div class="aler alert-danger" role="alert">
+      <strong>Error!</strong> {{error}}
+    </div>
+  {{/if}}
+  <form method="POST" action="/signup">
+    <div class="form-group">
+    <input type="text" name="username" class="form-control" placeholder="Name" value="{{body.username}}">
+  </div>
+  <div class="form-group">
+    <input type="text" name="phone" class="form-control" placeholder="Phone Number" value="{{body.phone}}">
+  </div>
+  <div class="form-group">
+    <input type="password" name="password" class="form-control" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <input type="password" name="repeatPassword" class="form-control" placeholder="Confirm Password">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success">Signup</button>
+    <!-- <a class="btn btn-primary" href="/signup">Register</a> -->
+  </div>
+  </form>
+</div>

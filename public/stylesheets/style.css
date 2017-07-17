@@ -1,0 +1,41 @@
+/* YOUR STYLES HERE */
+
+.all-messages {
+  border-radius: 3px;
+  border-style: double;
+  padding: 10px
+}
+
+.sent-message-container {
+  background-color: rgb(155, 193, 255);
+  border-radius: 3px;
+  width: 500px;
+  text-align: right;
+}
+
+.received-message-container {
+  background-color: rgb(255, 204, 204);
+  border-radius: 3px;
+  width: 500px;
+  text-align: left;
+}
+
+.sent {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 10px 0;
+}
+
+.received {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0 10px 0;
+}
+
+.send {
+  width: 100%;
+}
+
+[name="content"] {
+  width: 98%;
+}

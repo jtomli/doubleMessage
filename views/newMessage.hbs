@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>New {{type}} Message to {{name}}</h1>
+  {{#if sms}}
+    <form method="POST" action="/messages/send/{{id}}">
+  {{else}}
+    <form method="POST" action="/twitter/messages/send/{{id}}">
+  {{/if}}
+  <div class="form-group">
+    <label for="content">{{type}} Message</label>
+    <textarea autofocus="autofocus" name="content" rows="8" cols="80" placeholder="Message"></textarea>
+  </div>
+  {{#if sms}}
+    <div class="form-group">
+      <button class="btn btn-success">Send Message to {{name}} {{phone}}</button>
+    </div>
+  {{else}}
+    <div class="form-group">
+      <button class="btn btn-success">Send Message to {{name}}</button>
+    </div>
+  {{/if}}
+  </form>
+</div>

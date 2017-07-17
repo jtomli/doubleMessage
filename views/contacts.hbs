@@ -1,0 +1,71 @@
+
+{{#if social}}
+<div class="profile-info">
+  <img src="{{user.pictureUrl}}"> Logged in as {{user.username}}
+</div>
+{{/if}}
+<div class="contact-table">
+  <h1>SMS Contacts</h1>
+  <table class="table">
+    <thead>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      {{#each contacts}}
+      <tr>
+        <td>{{name}} {{phone}}</td>
+        <td>
+          <a href="/messages/send/{{_id}}"><button type="button" class="btn btn-primary">Send Text</button></a>
+        </td>
+        <td>
+          <a href="/messages/{{_id}}"><button type="button" class="btn btn-primary">View Messages</button></a>
+        </td>
+        <td>
+          <a href="/contacts/{{_id}}"><button type="button" class="btn btn-default">Edit Contact</button></a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<div class="contact-buttons">
+  <a href="/contacts/new"><button type="button" class="btn btn-primary">Add Contact</button></a>
+  <a href="/messages"><button type="button" class="btn btn-primary">View All Messages</button></a>
+</div>
+{{#if twitter}}
+<div class="followers-table">
+  <h1>Followers on Twitter</h1>
+  <div class="twitter-buttons">
+    <a href="/twitter/messages"><button type="button" class="btn btn-primary">Show All Messages</button></a>
+  </div>
+  <table class="table">
+    <thead>
+      <th>User Name</th>
+      <th>Name</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      {{#each followers}}
+      <tr>
+        <td>
+          <img src="{{profile_image_url}}"> {{screen_name}}</td>
+        <td>{{name}}</td>
+        <td><a href="/twitter/messages/send/{{id}}"><button type="button" class="btn btn-primary">Send Message</button></a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<div class="twitter-buttons">
+  {{#if followers}}
+  {{else}}
+  <a href="/twitter/import"><button type="button" class="btn btn-primary">Import Followers</button></a>
+  {{/if}}
+</div>
+{{/if}}
+<div class="options">
+  <a href="/logout"><button type="button" class="btn btn-danger">Logout</button></a>
+</div>

@@ -1,0 +1,11 @@
+
+<h1>All Messages</h1>
+<div class="all-messages">
+  {{#each messages}}
+      <div class="message-container">
+        <img src="{{img}}">{{sender}}: {{content}} (<b>DM</b> to {{receiver}} at {{time}})
+      </div>
+  {{/each}}
+</div>
+
+<a href="/contacts"><button type="button" class="btn btn-default">Back to Contacts</button></a>
